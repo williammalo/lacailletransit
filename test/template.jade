@@ -1,0 +1,84 @@
+doctype html
+meta(charset="utf-8")
+title
+	block title
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="viewport" content="width=device-width">
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu:700' rel='stylesheet' type='text/css'>
+<link rel=icon type="image/png" href="favicon.png">
+link(rel="stylesheet",href="style.css")
+//if lt IE 9
+	script(src="//html5shim.googlecode.com/svn/trunk/html5.js")
+	script(src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.1.0/respond.min.js")
+<body>
+.col2
+	figure.module <img src="nb.jpg">
+	section.artbg
+		h2#contact
+			block contactTitle
+		block contactAddress
+
+		div
+			h4 
+				block contact1t
+				<br>
+			|Stéphane Lacaille<br>
+			a(href="mailto:stephane@lacailletransit.ca") stephane@lacailletransit.ca<br><br>
+
+		div 
+			h4 
+				block contact2t
+				<br>
+			|Lori-Ann Kurty<br>
+			a(href="mailto:dispatch@lacailletransit.com") dispatch@lacailletransit.com<br><br>
+
+		div
+			h4
+				block contact3t
+				<br>
+			|Carol-Ann Edwards
+
+
+.col1
+	figure.module <img src="nb.jpg">
+	
+	section
+		h2#about
+			block aboutTitle
+			<img src=old.jpg>
+		block about
+	
+	section
+		h2#service 
+			block servicesTitle
+			<img src=field.jpg>
+		block services
+	section
+		h2#documents
+			block documentsTitle
+		block documents
+
+nav
+	a.first(href="#contact")
+		block nav1
+	a(href="#about")
+		block nav2
+	a(href="#service")
+		block nav3
+	a.last(href="#documents")
+		block nav4
+
+script
+	//classList polyfill
+	(function(){function c(a){this._element=a;if(a.className!=this.classCache){this._classCache=a.className;var a=this._classCache.split(" "),b;for(b=0;b<a.length;b++)e.call(this,a[b])}}if(!("undefined"===typeof Element||Element.prototype.hasOwnProperty("classList"))){var d=[].indexOf,f=[].slice,e=[].push,g=[].splice,h=[].join;c.prototype={add:function(a){e.call(this,a);a=f.call(this,0);this._element.className=a.join(" ")},contains:function(a){return-1!==d.call(this,a)},item:function(a){return this[a]||null},remove:function(a){a=d.call(this,a);g.call(this,a,1);a=f.call(this,0);this._element.className=a.join(" ")},toString:function(){return h.call(this," ")},toggle:function(a){-1===d.call(this,a)?this.add(a):this.remove(a)}};window.DOMTokenList=c;Element.prototype.__defineGetter__("classList",function(){return new c(this)})}})();
+	
+	var handler=function(e,z,i,a){
+		z=document.getElementsByTagName("nav")[0].getElementsByTagName("a")
+		for(i=z.length;i--;)z[i].classList.remove("clicked")
+		a=document.querySelector("[href='"+location.hash+"']")
+		a&&a.classList.add("clicked")
+	};
+	document.getElementsByTagName("nav")[0].onclick=handler
+	onload=handler
+	window.onhashchange=handler

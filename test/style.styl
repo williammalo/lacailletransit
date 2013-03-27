@@ -1,0 +1,190 @@
+@import '../../../lib/nib/'
+
+brand=rgb(232, 29, 0)
+phi=1.618
+lh=1.6
+
+padd=2em
+moduleMargin=1em
+
+*
+	box-sizing:     border-box
+	text-rendering: optimizeLegibility
+	position:       relative
+
+::selection
+	background: brand
+
+body
+	margin: 0
+	font-family: 'Ubuntu Condensed', sans-serif
+	color: rgba(0,0,0,.7)
+	background:#eee
+	padding-top:3.7em
+	line-height:lh*1em
+	font-size:16px
+	padding-right:moduleMargin
+	@media screen and (max-width:900px)
+		font-size:25px
+	@media screen and (max-width:690px)
+		font-size:20px
+	@media screen and (max-width:600px)
+		font-size:16px
+	@media screen and (min-width:1300px)
+		font-size:18px
+	@media screen and (min-width:1390px)
+		font-size:20px
+
+figure
+	margin:0
+
+img
+	max-width: 100%
+	border: none
+
+strong,h1,h2,h3,h4,h5
+	font-family: 'Ubuntu', sans-serif
+	color: rgba(0,0,0,.9)
+h1,h2,h3,h4,h5
+	margin-bottom:0.15em
+h4,h5
+	margin:0
+
+p
+	margin:0
+p+p
+	margin-top:lh*1em
+
+ul
+	margin:0
+
+a
+	color:brand
+
+a::selection,h2:target::selection
+	color: #fff
+
+h2>img
+	width:250px
+	float:right
+	margin-left:0 10px 10px 0
+	border:solid 8px #fff
+	@media screen and (max-width:600px)
+		float:none
+		display:block
+		left:100%
+		margin-left:-250px
+		margin-top:10px
+
+.module,.nav,.avatar,.map,h2>img
+	box-shadow: 0 0 8px rgba(#000,0.1)
+
+.avatar
+	size=5.5em
+	width:size; height:size
+	background:brand
+	float:left
+	margin:0 1em 0 0
+
+.module
+	display:inline-block
+	vertical-align:top
+	padding:padd
+	width:100%
+	background:#fff
+	//background:#fff linear-gradient(#fff,#ccc)  21px 25px !important
+	//background-size:36px 32px !important
+	margin-bottom:moduleMargin
+	text-align: left
+	h2
+		margin-top: -100px
+		padding-top: 100px
+		&:target
+			color:brand
+			text-shadow:0 0 6px rgba(brand,.2)
+section
+	@extends .module
+
+nav,nav a
+	border-top:solid 1px rgba(#fff,0.2)
+	border-bottom:solid 1px rgba(#000,0.1)
+
+nav
+	background:brand
+	//background:linear-gradient(top,darken(brand,5%) 0%,darken(brand,5%) 49%,darken(brand,8%) 51%,darken(brand,8%) 100%)
+	text-align:center
+	position:fixed
+	width:100%
+	z-index:10
+	top:0
+	left:0
+	a
+		display:inline-block
+		padding: .5em 3em
+		color:#fff
+		text-decoration:none
+		text-shadow: 0 1px 0 rgba(#fff,0.3),0 -1px 0 rgba(#000,0.2)
+		border-left:solid 1px rgba(#000,0.1)
+		border-right:solid 1px rgba(#fff,0.2)
+		margin:-1px
+		&.first
+			box-shadow:-1px 0 0 rgba(#fff,0.2)
+		&.last
+			box-shadow:1px 0 0 rgba(#000,0.1)
+		&:hover,&.clicked
+			text-shadow: 0 0 10px rgba(#fff,0.7)
+
+@media screen and (max-width:900px)
+	nav a
+		width:50%
+	nav
+		top:auto
+		bottom:0
+	body
+		padding-bottom:5.3em
+		padding-top:moduleMargin
+
+@media screen and (min-width:900px)
+	nav a.clicked:after
+		content:""
+		display:block
+		width:0
+		height:0
+		position:absolute
+		bottom:-.9em
+		left: 50%
+		margin-left:-.5em
+		border:solid .5em transparent
+		border-top-color:brand
+
+
+.artbg
+	padding-bottom:55%
+	background:#fff url(artb.jpg) bottom right no-repeat
+	background-size:contain
+
+figure.module
+	line-height:0
+	padding:0
+
+.col1,.col2
+	vertical-align:top
+	padding-left:moduleMargin
+	display:inline-block
+
+.col1
+	width:61.8%
+.col2
+	width:38.2%
+
+.col2 figure.module
+	display:none
+@media screen and (max-width:900px)
+	.col1, .col2
+		width:100%
+		width:100%
+	.col2 figure.module
+		display:inline-block
+	.col1 figure.module
+		display:none
+
