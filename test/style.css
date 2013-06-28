@@ -41,6 +41,7 @@ body {
 }
 figure {
   margin: 0;
+  width: 100%;
 }
 figure>h1 {
   height: 0;
