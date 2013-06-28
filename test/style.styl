@@ -13,7 +13,8 @@ moduleMargin=1em
 	position:       relative
 
 ::selection
-	background: brand
+	background: brand !important
+	text-shadow:none !important
 
 body
 	margin: 0
@@ -25,8 +26,6 @@ body
 	font-size:16px
 	padding-right:moduleMargin
 	@media screen and (max-width:900px)
-		font-size:25px
-	@media screen and (max-width:690px)
 		font-size:20px
 	@media screen and (max-width:600px)
 		font-size:16px
@@ -37,6 +36,11 @@ body
 
 figure
 	margin:0
+
+figure>h1
+	height:0
+	margin:0
+	color:#eee
 
 img
 	max-width: 100%
@@ -64,11 +68,15 @@ a
 a::selection,h2:target::selection
 	color: #fff
 
+h2
+	margin-bottom:(lh/1.5em)
+
 h2>img
 	width:250px
 	float:right
-	margin-left:0 10px 10px 0
+	margin-left:10px
 	border:solid 8px #fff
+	transform:rotate(2deg)
 	@media screen and (max-width:600px)
 		float:none
 		display:block
@@ -105,13 +113,18 @@ h2>img
 section
 	@extends .module
 
+section>img
+	height:100%
+	width:auto
+	float:left
+
 nav,nav a
 	border-top:solid 1px rgba(#fff,0.2)
 	border-bottom:solid 1px rgba(#000,0.1)
 
 nav
 	background:brand
-	//background:linear-gradient(top,darken(brand,5%) 0%,darken(brand,5%) 49%,darken(brand,8%) 51%,darken(brand,8%) 100%)
+	background:linear-gradient(top,darken(brand,5%) 0%,darken(brand,5%) 49%,darken(brand,8%) 51%,darken(brand,8%) 100%)
 	text-align:center
 	position:fixed
 	width:100%
@@ -155,36 +168,52 @@ nav
 		left: 50%
 		margin-left:-.5em
 		border:solid .5em transparent
-		border-top-color:brand
+		border-top-color:darken(brand,5%)
 
+
+.sidebg
+	background:#fff url("http://farm4.staticflickr.com/3779/9158213059_265f34c54b_c.jpg") bottom right no-repeat
+	background-size:auto 100%
+	text-shadow:0 0 10px #fff
+	@media screen and (max-width:750px)
+		background:#fff
+		text-shadow:none
+.photobg
+	padding-bottom:23%
+	background:#fff url("http://farm8.staticflickr.com/7286/9160437206_e1fe921b6c_h.jpg") bottom right no-repeat
+	background-size:contain
+	text-shadow:0 0 10px #fff
 
 .artbg
-	padding-bottom:55%
-	background:#fff url(artb.jpg) bottom right no-repeat
+	padding-bottom:46%
+	background:#fff url("http://farm6.staticflickr.com/5450/9160437244_51a81cf808_b.jpg") bottom right no-repeat
 	background-size:contain
+	text-shadow:0 0 10px #fff
 
-figure.module
+img.module
 	line-height:0
-	padding:0
+	padding:0 !important
 
-.col1,.col2
+.col1,.col2,.col
 	vertical-align:top
 	padding-left:moduleMargin
 	display:inline-block
 
 .col1
 	width:61.8%
+
 .col2
 	width:38.2%
 
-.col2 figure.module
-	display:none
+@media screen and (min-width:900px)
+	.mobile
+		display:none !important
+
 @media screen and (max-width:900px)
+	.desktop
+		display:none !important
 	.col1, .col2
 		width:100%
 		width:100%
-	.col2 figure.module
-		display:inline-block
-	.col1 figure.module
-		display:none
+
 

@@ -12,8 +12,11 @@ link(rel="stylesheet",href="style.css")
 	script(src="//html5shim.googlecode.com/svn/trunk/html5.js")
 	script(src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.1.0/respond.min.js")
 <body>
+figure.col
+	//hidden
+	h1 Lacaille Transit
+	img.module(src="http://farm6.staticflickr.com/5466/9160440166_e10b69ec49_k.jpg")
 .col2
-	figure.module <img src="nb.jpg">
 	section.artbg
 		h2#contact
 			block contactTitle
@@ -39,20 +42,17 @@ link(rel="stylesheet",href="style.css")
 				<br>
 			|Carol-Ann Edwards
 
-
 .col1
-	figure.module <img src="nb.jpg">
 	
-	section
+	section.photobg
 		h2#about
 			block aboutTitle
-			<img src=old.jpg>
+			<img src="http://farm8.staticflickr.com/7322/9158213075_870a18d29f.jpg">
 		block about
 	
-	section
+	section.sidebg
 		h2#service 
 			block servicesTitle
-			<img src=field.jpg>
 		block services
 	section
 		h2#documents
@@ -82,3 +82,14 @@ script
 	document.getElementsByTagName("nav")[0].onclick=handler
 	onload=handler
 	window.onhashchange=handler
+
+	onresize=function(){
+		var t=document.getElementById("documents").parentElement;
+		t.parentElement.removeChild(t)
+		if(window.innerWidth<900){
+			document.querySelector(".col1").appendChild(t)
+		}else{
+			document.querySelector(".col2").appendChild(t)
+		}
+	};
+	onresize();
