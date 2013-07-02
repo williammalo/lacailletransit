@@ -195,16 +195,27 @@ nav a.clicked {
   text-shadow: 0 0 10px rgba(255,255,255,0.7);
 }
 @media screen and (max-width:900px) {
-  nav a {
-    width: 50%;
-  }
   nav {
     top: auto;
     bottom: 0;
   }
+  nav a {
+    padding: 0.2em 1em;
+  }
   body {
     padding-bottom: 5.3em;
     padding-top: 1em;
+  }
+}
+@media screen and (max-width:490px) {
+  nav a {
+    width: 20%;
+    padding: 0.3em 0;
+  }
+}
+@media screen and (max-width:420px) {
+  nav a {
+    font-size: 0.8em;
   }
 }
 @media screen and (min-width:900px) {
