@@ -100,8 +100,9 @@ script
 	onload=handler
 	window.onhashchange=handler
 
+	var t=document.getElementById("documents").parentElement;
+	
 	onresize=function(){
-		var t=document.getElementById("documents").parentElement;
 		t.parentElement.removeChild(t)
 		if(window.innerWidth<900){
 			document.querySelector(".col1").appendChild(t)

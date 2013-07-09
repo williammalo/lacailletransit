@@ -176,6 +176,7 @@ nav {
   background: linear-gradient(top, #dc1c00 0%, #dc1c00 49%, #d51b00 51%, #d51b00 100%);
   text-align: center;
   position: fixed;
+  -webkit-transform: translateZ(1px);
   width: 100%;
   z-index: 10;
   top: 0;
