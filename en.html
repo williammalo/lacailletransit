@@ -22,7 +22,7 @@ var t=document.getElementById("documents").parentElement;
 var img=document.getElementById("img");
 onresize=function(){
  t.parentElement.removeChild(t)
- var w=window.innerWidth;
+ var w=window.innerWidth||document.documentElement.clientWidth; //ie fix
  var tw=(window.devicePixelRatio||1)*w
  var src="http://farm6.staticflickr.com/5466/9160440166_e46a0d640f_n.jpg";
  if(w<900){
