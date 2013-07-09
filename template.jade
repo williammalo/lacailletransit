@@ -89,7 +89,7 @@ nav
 script
 	var handler;
 
-	if(Element.classList){
+	if("classList" in Element.prototype){
 		handler=function(e,z,i,a){
 			z=document.getElementsByTagName("nav")[0].getElementsByTagName("a")
 			for(i=z.length;i--;)z[i].classList.remove("clicked")
