@@ -87,15 +87,19 @@ nav
 	block langswitch
 
 script
-	var handler=function(e,z,i,a){
-		z=document.getElementsByTagName("nav")[0].getElementsByTagName("a")
-		for(i=z.length;i--;)z[i].classList.remove("clicked")
-		a=document.querySelector("[href='"+location.hash+"']")
-		a&&a.classList.add("clicked")
+	var handler;
+
+	if(Element.classList){
+		handler=function(e,z,i,a){
+			z=document.getElementsByTagName("nav")[0].getElementsByTagName("a")
+			for(i=z.length;i--;)z[i].classList.remove("clicked")
+			a=document.querySelector("[href='"+location.hash+"']")
+			a&&a.classList.add("clicked")
+		};
+		document.getElementsByTagName("nav")[0].onclick=handler
+		onload=handler
+		window.onhashchange=handler
 	};
-	document.getElementsByTagName("nav")[0].onclick=handler
-	onload=handler
-	window.onhashchange=handler
 
 	var t=document.getElementById("documents").parentElement;
 	var img=document.getElementById("img");
