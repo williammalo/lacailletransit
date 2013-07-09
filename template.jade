@@ -18,7 +18,7 @@ link(rel="stylesheet",href="style.css")
 figure.col
 	//hidden
 	h1 Lacaille Transit
-	img.module(src="http://farm6.staticflickr.com/5466/9160440166_e10b69ec49_k.jpg")
+	img.module#img
 .col2
 	section.artbg
 		h2#contact
@@ -101,13 +101,26 @@ script
 	window.onhashchange=handler
 
 	var t=document.getElementById("documents").parentElement;
-	
+	var img=document.getElementById("img");
+		
 	onresize=function(){
 		t.parentElement.removeChild(t)
-		if(window.innerWidth<900){
+		var w=window.innerWidth;
+		var tw=(window.devicePixelRatio||1)*w
+		var src="http://farm6.staticflickr.com/5466/9160440166_e46a0d640f_n.jpg";
+		if(w<900){
 			document.querySelector(".col1").appendChild(t)
 		}else{
 			document.querySelector(".col2").appendChild(t)
 		}
+
+		if(tw>320){src="http://farm6.staticflickr.com/5466/9160440166_e46a0d640f.jpg"}
+		if(tw>500){src="http://farm6.staticflickr.com/5466/9160440166_e46a0d640f_z.jpg"}
+		if(tw>640){src="http://farm6.staticflickr.com/5466/9160440166_e46a0d640f_c.jpg"}
+		if(tw>800){src="http://farm6.staticflickr.com/5466/9160440166_e46a0d640f_b.jpg"}
+		if(tw>1024){src="http://farm6.staticflickr.com/5466/9160440166_606bacf9c1_h.jpg"}
+		if(tw>1600){src="http://farm6.staticflickr.com/5466/9160440166_e10b69ec49_k.jpg"}
+		img.src=src;
+
 	};
 	onresize();

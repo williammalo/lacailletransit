@@ -263,6 +263,16 @@ nav a.clicked {
   background-size: contain;
   text-shadow: 0 0 10px #fff;
 }
+@media screen and (max-width:600px) {
+  .photobg {
+    background-image: url("http://farm8.staticflickr.com/7286/9160437206_a9e7551712_b.jpg");
+  }
+}
+@media screen and (max-width:400px) {
+  .photobg {
+    background-image: url("http://farm8.staticflickr.com/7286/9160437206_a9e7551712_c.jpg");
+  }
+}
 .artbg {
   padding-bottom: 46%;
   background: #fff url("http://farm6.staticflickr.com/5450/9160437244_51a81cf808_b.jpg") bottom right no-repeat;
@@ -279,7 +289,8 @@ nav a.clicked {
 }
 img.module {
   line-height: 0;
-  padding: 0 !important;
+  display: block;
+  padding: 0;
 }
 .col1,
 .col2,
