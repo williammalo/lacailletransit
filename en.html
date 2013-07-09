@@ -23,11 +23,13 @@ onresize=function(){
  var w=window.innerWidth;
  var tw=(window.devicePixelRatio||1)*w
  var src="http://farm6.staticflickr.com/5466/9160440166_e46a0d640f_n.jpg";
+ try{
  if(w<900){
   document.querySelector(".col1").appendChild(t)
  }else{
   document.querySelector(".col2").appendChild(t)
  }
+ }catch(e){};
  
  if(tw>320){src="http://farm6.staticflickr.com/5466/9160440166_e46a0d640f.jpg"}
  if(tw>500){src="http://farm6.staticflickr.com/5466/9160440166_e46a0d640f_z.jpg"}
