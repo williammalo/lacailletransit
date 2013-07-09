@@ -74,8 +74,6 @@
 </div>
 <nav><a href="#contact" class="first">Contact</a><a href="#about">À propos</a><a href="#service">Services</a><a href="#documents" class="last">Documents</a><a href="en" class="langswitch">English</a></nav>
 <script>
-  //classList polyfill
-  (function(){function c(a){this._element=a;if(a.className!=this.classCache){this._classCache=a.className;var a=this._classCache.split(" "),b;for(b=0;b<a.length;b++)e.call(this,a[b])}}if(!("undefined"===typeof Element||Element.prototype.hasOwnProperty("classList"))){var d=[].indexOf,f=[].slice,e=[].push,g=[].splice,h=[].join;c.prototype={add:function(a){e.call(this,a);a=f.call(this,0);this._element.className=a.join(" ")},contains:function(a){return-1!==d.call(this,a)},item:function(a){return this[a]||null},remove:function(a){a=d.call(this,a);g.call(this,a,1);a=f.call(this,0);this._element.className=a.join(" ")},toString:function(){return h.call(this," ")},toggle:function(a){-1===d.call(this,a)?this.add(a):this.remove(a)}};window.DOMTokenList=c;Element.prototype.__defineGetter__("classList",function(){return new c(this)})}})();
   var handler=function(e,z,i,a){
    z=document.getElementsByTagName("nav")[0].getElementsByTagName("a")
    for(i=z.length;i--;)z[i].classList.remove("clicked")
