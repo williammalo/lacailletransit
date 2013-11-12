@@ -1,15 +1,41 @@
 <!DOCTYPE html><meta charset="utf-8"><title></title><meta http-equiv="X-UA-Compatible" content="chrome=1">
-<meta name="viewport" content="width=device-width">
-<link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
+<meta name="viewport" content="width=device-width"><!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.1.0/respond.min.js"></script><![endif]--><link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Ubuntu:700' rel='stylesheet' type='text/css'>
-<link rel=icon type="image/png" href="favicon.png"><link rel="stylesheet" href="style.css"><!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.1.0/respond.min.js"></script><![endif]--><body><div class="col2"><figure class="module"><img src="nb.jpg"></figure><section class="artbg"><h2 id="contact"></h2><div><h4> <br></h4>Stéphane Lacaille<br><a href="mailto:stephane@lacailletransit.ca">stephane@lacailletransit.ca<br><br></a></div><div> <h4> <br></h4>Lori-Ann Kurty<br><a href="mailto:dispatch@lacailletransit.com">dispatch@lacailletransit.com<br><br></a></div><div><h4><br></h4>Carol-Ann Edwards</div></section></div><div class="col1"><figure class="module"><img src="nb.jpg"></figure><section><h2 id="about"><img src=old.jpg></h2></section><section><h2 id="service"> <img src=field.jpg></h2></section><section><h2 id="documents"></h2></section></div><nav><a href="#contact" class="first"></a><a href="#about"></a><a href="#service"></a><a href="#documents" class="last"></a></nav><script>//classList polyfill
-(function(){function c(a){this._element=a;if(a.className!=this.classCache){this._classCache=a.className;var a=this._classCache.split(" "),b;for(b=0;b<a.length;b++)e.call(this,a[b])}}if(!("undefined"===typeof Element||Element.prototype.hasOwnProperty("classList"))){var d=[].indexOf,f=[].slice,e=[].push,g=[].splice,h=[].join;c.prototype={add:function(a){e.call(this,a);a=f.call(this,0);this._element.className=a.join(" ")},contains:function(a){return-1!==d.call(this,a)},item:function(a){return this[a]||null},remove:function(a){a=d.call(this,a);g.call(this,a,1);a=f.call(this,0);this._element.className=a.join(" ")},toString:function(){return h.call(this," ")},toggle:function(a){-1===d.call(this,a)?this.add(a):this.remove(a)}};window.DOMTokenList=c;Element.prototype.__defineGetter__("classList",function(){return new c(this)})}})();
-var handler=function(e,z,i,a){
- z=document.getElementsByTagName("nav")[0].getElementsByTagName("a")
- for(i=z.length;i--;)z[i].classList.remove("clicked")
- a=document.querySelector("[href='"+location.hash+"']")
- a&&a.classList.add("clicked")
+<link rel=icon type="image/png" href="favicon.png"><link rel="stylesheet" href="style.css"><!--[if lt IE 9]><body class=ie8><![endif]--><figure class="col"><!--hidden--><h1>Lacaille Transit</h1><img id="img" class="module"></figure><div class="col2"><section class="artbg"><h2 id="contact"></h2><div><h4> </h4>Stéphane Lacaille<br><a href="mailto:stephane@lacailletransit.ca">stephane@lacailletransit.ca<br><br></a></div><div> <h4> </h4><ul></ul><li>Lori-Ann Kurty<br></li><li>René Simoneau</li><a href="mailto:dispatch@lacailletransit.com">dispatch@lacailletransit.com<br><br></a></div><div><h4></h4>Vianney kavanagh<br><a href="tel:+4502750067">(450) 275-0067<br><br></a></div><div><h4></h4>Carol-Ann Edwards<br><a href="mailto:accounting@lacailletransit.com">accounting@lacailletransit.com<br><br></a></div><div><h4></h4><br><a href="mailto:payablesprocessing@lacailletransit.ca">payablesprocessing@lacailletransit.ca<br><br></a></div></section></div><div class="col1"><section class="photobg"><h2 id="about"><img src="http://farm8.staticflickr.com/7322/9158213075_870a18d29f.jpg"></h2></section><section class="sidebg"><h2 id="service"> </h2></section><section><h2 id="documents"></h2></section></div><nav><a href="#contact" class="first"></a><a href="#about"></a><a href="#service"></a><a href="#documents" class="last"></a></nav><script>var handler;
+
+if("classList"in document.documentElement){
+ handler=function(e,z,i,a){
+  z=document.getElementsByTagName("nav")[0].getElementsByTagName("a")
+  for(i=z.length;i--;)z[i].classList.remove("clicked")
+  a=document.querySelector("[href='"+location.hash+"']")
+  a&&a.classList.add("clicked")
+ };
+ document.getElementsByTagName("nav")[0].onclick=handler
+ onload=handler
+ window.onhashchange=handler
 };
-document.getElementsByTagName("nav")[0].onclick=handler
-onload=handler
-window.onhashchange=handler</script>
+
+var t=document.getElementById("documents").parentElement;
+var img=document.getElementById("img");
+onresize=function(){
+ t.parentElement.removeChild(t)
+ var w=window.innerWidth||document.documentElement.clientWidth; //ie fix
+ var tw=(window.devicePixelRatio||1)*w
+ var src="http://farm6.staticflickr.com/5466/9160440166_e46a0d640f_n.jpg";
+ if(w<900){
+  document.querySelector(".col1").appendChild(t)
+ }else{
+  document.querySelector(".col2").appendChild(t)
+ }
+ 
+ 
+ if(tw>320){src="http://farm6.staticflickr.com/5466/9160440166_e46a0d640f.jpg"}
+ if(tw>500){src="http://farm6.staticflickr.com/5466/9160440166_e46a0d640f_z.jpg"}
+ if(tw>640){src="http://farm6.staticflickr.com/5466/9160440166_e46a0d640f_c.jpg"}
+ if(tw>800){src="http://farm6.staticflickr.com/5466/9160440166_e46a0d640f_b.jpg"}
+ if(tw>1024){src="http://farm6.staticflickr.com/5466/9160440166_606bacf9c1_h.jpg"}
+ if(tw>1600){src="http://farm6.staticflickr.com/5466/9160440166_e10b69ec49_k.jpg"}
+ img.src=src;
+ 
+};
+onresize();</script>
