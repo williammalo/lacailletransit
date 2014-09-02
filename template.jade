@@ -4,16 +4,18 @@ title
 	block title
 <meta http-equiv="X-UA-Compatible" content="chrome=1">
 <meta name="viewport" content="width=device-width">
-//if lt IE 9
-	script(src="//html5shim.googlecode.com/svn/trunk/html5.js")
-	script(src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.1.0/respond.min.js")
+<!--[if lt IE 9]>
+script(src="//html5shim.googlecode.com/svn/trunk/html5.js")
+script(src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.1.0/respond.min.js")
+<![endif]-->
 <link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Ubuntu:700' rel='stylesheet' type='text/css'>
 <link rel=icon type="image/png" href="favicon.png">
 link(rel="stylesheet",href="style.css")
 
-//if lt IE 9
-	<body class=ie8>
+<!--[if lt IE 9]>
+<body class=ie8>
+<![endif]-->
 
 figure.col
 	//hidden
@@ -88,7 +90,7 @@ nav
 		block nav4
 	block langswitch
 
-script
+script.
 	var handler;
 
 	if("classList"in document.documentElement){
