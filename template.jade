@@ -51,17 +51,16 @@ figure.col
 				block contact4t
 			|Vianney Kavanagh<br>
 			a(href="tel:+4502750067") (450) 275-0067<br><br>
-
-		div
-			h4
-				block contact3t
-			|Carol-Ann Edwards<br>
-			a(href="mailto:accounting@lacailletransit.com") accounting@lacailletransit.com<br><br>
 		div
 			h4
 				block contact7t
 			|Marc tardif<br>
-			a(href="mailto:marc@lacailletransit.com") marc@lacailletransit.com
+			a(href="mailto:marc@lacailletransit.com") marc@lacailletransit.com<br><br>
+		div
+			h4
+				block contact3t
+			|Carol-Ann Edwards<br>
+			a(href="mailto:accounting@lacailletransit.com") accounting@lacailletransit.com
 		div
 			h4
 				block contact5t
@@ -124,11 +123,6 @@ script.
 		var w=window.innerWidth||document.documentElement.clientWidth; //ie fix
 		var tw=(window.devicePixelRatio||1)*w
 		var src="http://farm6.staticflickr.com/5466/9160440166_e46a0d640f_n.jpg";
-		if(w<900){
-			document.querySelector(".col1").appendChild(t)
-		}else{
-			document.querySelector(".col2").appendChild(t)
-		}
 
 
 		if(tw>320){src="http://farm6.staticflickr.com/5466/9160440166_e46a0d640f.jpg"}
