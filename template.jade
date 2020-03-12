@@ -71,7 +71,7 @@ figure.col
 	section.photobg
 		h2#about
 			block aboutTitle
-			<img src="http://farm8.staticflickr.com/7322/9158213075_870a18d29f.jpg">
+			<img src="http://lacaille.s3.amazonaws.com/9158213075_870a18d29f.jpg">
 		block about
 	
 	section.sidebg
@@ -118,15 +118,15 @@ script.
 	onresize=function(){
 		var w=window.innerWidth||document.documentElement.clientWidth; //ie fix
 		var tw=(window.devicePixelRatio||1)*w
-		var src="http://farm6.staticflickr.com/5466/9160440166_e46a0d640f_n.jpg";
+		var src="http://lacaille.s3.amazonaws.com/9160440166_e46a0d640f_n.jpg";
 
 
-		if(tw>320){src="http://farm6.staticflickr.com/5466/9160440166_e46a0d640f.jpg"}
-		if(tw>500){src="http://farm6.staticflickr.com/5466/9160440166_e46a0d640f_z.jpg"}
-		if(tw>640){src="http://farm6.staticflickr.com/5466/9160440166_e46a0d640f_c.jpg"}
-		if(tw>800){src="http://farm6.staticflickr.com/5466/9160440166_e46a0d640f_b.jpg"}
-		if(tw>1024){src="http://farm6.staticflickr.com/5466/9160440166_606bacf9c1_h.jpg"}
-		if(tw>1600){src="http://farm6.staticflickr.com/5466/9160440166_e10b69ec49_k.jpg"}
+		if(tw>320){src="http://lacaille.s3.amazonaws.com/9160440166_e46a0d640f.jpg"}
+		if(tw>500){src="http://lacaille.s3.amazonaws.com/9160440166_e46a0d640f_z.jpg"}
+		if(tw>640){src="http://lacaille.s3.amazonaws.com/9160440166_e46a0d640f_c.jpg"}
+		if(tw>800){src="http://lacaille.s3.amazonaws.com/9160440166_e46a0d640f_b.jpg"}
+		if(tw>1024){src="http://lacaille.s3.amazonaws.com/9160440166_606bacf9c1_h.jpg"}
+		if(tw>1600){src="http://lacaille.s3.amazonaws.com/9160440166_e10b69ec49_k.jpg"}
 		img.src=src;
 
 	};
